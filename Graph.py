@@ -117,6 +117,12 @@ class Grafo():
         graph = Grafo()
         graph.build_graph()
         print(graph)
+
+
+
+
+        
+
     
 
 
