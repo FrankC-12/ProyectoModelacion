@@ -2,6 +2,7 @@ import heapq
 import networkx as nx
 import matplotlib.pyplot as plt
 
+
 def dijkstra(graph, start, end):
     # Obtener los nodos únicos del grafo
     nodes = set(graph.keys())
@@ -49,11 +50,9 @@ with open("caminos.txt", "r") as data:
         graph[origin][dest] = float(weight)
 
 # Encontrar el camino más corto entre CCS y SXM
-path, distance = dijkstra(graph, 'CCS', 'SXM')
-if path:
-    print(f"El camino más corto entre CCS y SXM es: {' -> '.join(path)}")
-    print(f"La distancia total es: {distance:.2f}")
 
+
+def crear(path):
     # Crear grafo con el camino más corto
     G_shortest = nx.Graph()
     for i in range(len(path) - 1):
@@ -65,5 +64,3 @@ if path:
     labels = nx.get_edge_attributes(G_shortest, 'weight')
     nx.draw_networkx_edge_labels(G_shortest, pos, edge_labels=labels)
     plt.show()
-else:
-    print(f"No se encontró un camino entre CCS y SXM")

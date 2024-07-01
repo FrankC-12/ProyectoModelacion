@@ -107,7 +107,7 @@ class Grafo():
         nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels,font_size=font_size)
 
         # Mostrar el gráfico
-        plt.show()
+        #plt.show()
 
 
             
